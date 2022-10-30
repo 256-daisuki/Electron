@@ -1,13 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" class="css">
-</head>
-<body>
-    <p>hello world</p>
-</body>
+    <title></title>
+  </head>
+  <body>
+      <script src="index.js"></script>
+    <tr>
+      <td>
+        <textarea id="txt" cols="92" rows="25"> </textarea>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>ファイル名</td>
+      <td>
+        <input type="text" id="nmSaveFile">
+      </td>
+      <td>
+        <button onclick="save()">保存する</button>
+      </td>
+    </tr>
+    <br>
+    <tr>
+      <td>
+        <input type="file" id="load">
+      </td>
+      <td>
+        <button onclick="loadTxt()">ロードする</button>
+      </td>
+    </tr>
+  </body>
 </html>
