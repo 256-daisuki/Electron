@@ -1,0 +1,10 @@
+body {
+    margin: auto;
+    overflow: visible;
+    overflow: hidden;
+}
+
+textarea {
+    width: 100vw;
+    height: 256vw;
+}
