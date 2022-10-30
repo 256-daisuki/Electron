@@ -1,0 +1,268 @@
+
+<!-- saved from url=(0018)http://mymemo.top/ -->
+<html><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="twitter:card" content="photo">
+	<meta name="twitter:site" content="@yuki_nagahama">
+	<meta name="twitter:title" content="ブラウザーをメモ帳にできるサイト｜mymemo.top">
+	<meta name="twitter:image" content="http://mymemo.top/memo.jpg">
+	<meta name="twitter:url" content="http://mymemo.top">
+	<meta name="twitter:description" content="メモ帳をサクッと開きたい事はありませんか？mymemo.topと入力するだけであなたのブラウザーがメモ帳になります。">
+
+    <meta property="fb:app_id" content="545562558961190">
+	<meta property="og:title" content="ブラウザーをメモ帳にできるサイト｜mymemo.top">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://mymemo.top">
+	<meta property="og:image" content="http://mymemo.top/memo.jpg">
+	<meta property="og:description" content="メモ帳をサクッと開きたい事はありませんか？mymemo.topと入力するだけであなたのブラウザーがメモ帳になります。">
+	<meta property="og:site_name" content="ブラウザーをメモ帳にできるサイト｜mymemo.top">
+	<title>ブラウザメモ帳</title>
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="./ブラウザメモ帳_files/materialize.min.css">
+	<!-- Compiled and minified JavaScript -->
+	<script src="./ブラウザメモ帳_files/jquery-2.2.4.min.js.ダウンロード"></script>
+
+	<script src="./ブラウザメモ帳_files/materialize.min.js.ダウンロード"></script>
+	<link rel="stylesheet" href="./ブラウザメモ帳_files/notosansjp.css">
+	<link rel="stylesheet" type="text/css" href="./ブラウザメモ帳_files/ionicons.min.css">
+<style type="text/css">
+	body {
+		width:100%;
+		height:100%;
+		margin:0;
+		font-family: 'Noto Sans JP', sans-serif;
+	}
+	textarea {
+		width:100%;
+		min-height:100%;
+		border:none;
+		font-size:20px;
+		outline:none;
+		font-weight:100;
+		padding:10px;
+		font-family:'Noto Sans JP', sans-serif;
+	}
+	#main.more-small {
+		padding:30px;
+	} 
+	#barMark {
+		width:40px;
+		height:40px;
+		background:#333;
+		float:left;
+		margin-top:500px;
+		border-radius:4px 0 0 4px;
+		color:#fff;
+		text-align:center;
+		font-size:200%;
+		padding-top:5px;
+	}
+	#bar {
+		width:110px;
+		height:100%;
+		position:fixed;
+		top:0%;
+		right:-70px;
+		padding:0;
+		transition-timing-function:ease-out;
+		-webkit-transition-timing-function:ease-out;
+		-moz-transition-timing-function:ease-out;
+		-o-transition-timing-function:ease-out;
+		-ms-transition-timing-function:ease-out;
+		transition-duration:0.3s;
+		-webkit-transition-duration:0.3s;
+		-moz-transition-duration:0.3s;
+		-o-transition-duration:0.3s;
+		-ms-transition-duration:0.3s;
+	}
+	#bar.active {
+		top:0%;
+		right:0px;
+		transition-timing-function:ease-out;
+		-webkit-transition-timing-function:ease-out;
+		-moz-transition-timing-function:ease-out;
+		-o-transition-timing-function:ease-out;
+		-ms-transition-timing-function:ease-out;
+		transition-duration:0.6s;
+		-webkit-transition-duration:0.6s;
+		-moz-transition-duration:0.6s;
+		-o-transition-duration:0.6s;
+		-ms-transition-duration:0.6s;
+	}
+	#barFlup {
+		width:30px;
+		height:100%;
+		position:fixed;
+		top:0px;
+		right:0px;
+		cursor:pointer;
+	}
+	ul {
+		width:70px;
+		height:100%;
+		margin:0;
+		background:#333;
+		float:left;
+	}
+	li {
+		width:50px;
+		height:50px;
+		margin:auto;
+		margin-top:20px;
+		line-height:50px;
+		text-align:center;
+	    border-radius:100%;
+	    color:#333;
+	    cursor:pointer;
+	    font-size:140%;
+	}
+	#toast-container {
+		margin-right:50px;
+		position:absolute;
+		top:10px;
+		left:0;
+	}
+</style>
+</head>
+<body>
+<!--script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '545562558961190',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script-->
+
+	<textarea id="main" onmouseover="barHide();">	
+	</textarea>
+  
+  <div id="bar" class="">
+    <div id="barMark" class="z-depth-1 icon ion-ios-gear-outline" onmouseover="barShow();"></div>
+  	<ul class="z-depth-1">
+  	  <li class="tooltipped z-depth-1 icon ion-ios-copy-outline" data-position="left" data-delay="50" data-tooltip="SAVE" onclick="saved();" style="background:#66bb6a;" data-tooltip-id="5a8d7b95-8b98-91bf-6a50-3195701baa85"></li>
+  	  <li class="tooltipped z-depth-1 icon ion-ios-upload-outline" data-position="left" data-delay="50" data-tooltip="SHARE" onclick="share();" style="background:#ff7043;" data-tooltip-id="9c4ffc65-ac53-1601-8367-6d56ea3a45ea"></li>
+  	  <li class="tooltipped z-depth-1 icon ion-ios-trash-outline" data-position="left" data-delay="50" data-tooltip="DELETE" onclick="deletes();" style="background:#78909c;" data-tooltip-id="910eae27-4714-d8a4-7576-a0f264e30f37"></li>
+  	  <li class="tooltipped z-depth-1 icon ion-ios-crop" data-position="left" data-delay="50" data-tooltip="Small" onclick="small();" style="background:#26c6da;" data-tooltip-id="acf5a641-eed0-6b86-3f20-22ebabf72c9a"></li>
+  	  <li class="tooltipped z-depth-1 icon ion-ios-color-wand-outline" data-position="left" data-delay="50" data-tooltip="Font Size" onclick="changeFont();" style="background:#ec407a;" data-tooltip-id="b13c4c06-db09-0677-78e3-344e74410ba1"></li>
+  	  <li class="tooltipped z-depth-1 icon ion-ios-eye-outline" data-position="left" data-delay="50" data-tooltip="Font Weight" onclick="weights();" style="background:#ffca28;" data-tooltip-id="9c84478e-7eb7-6f00-f8f8-15f6ca50d827"></li>
+  	  <a href="http://twitter.com/share?url=http://mymemo.top&amp;text=%E3%83%A1%E3%83%A2%E5%B8%B3%E3%82%92%E3%82%B5%E3%82%AF%E3%83%83%E3%81%A8%E9%96%8B%E3%81%8D%E3%81%9F%E3%81%84%E4%BA%8B%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93%E3%81%8B%EF%BC%9Fmymemo.top%E3%81%A8%E5%85%A5%E5%8A%9B%E3%81%99%E3%82%8B%E3%81%A0%E3%81%91%E3%81%A7%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%8C%E3%83%A1%E3%83%A2%E5%B8%B3%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82&amp;via=@yuki_nagahama" target="_blank">
+  	    <li class="tooltipped z-depth-1 icon ion-social-twitter" data-position="left" data-delay="50" data-tooltip="Twitter" style="background:#55acee;" data-tooltip-id="84cb7966-9718-bc35-ebf6-0b57af991f69"></li>
+  	  </a>
+  	  <a href="http://www.facebook.com/sharer.php?u=http://mymemo.top&amp;t=%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%83%BC%E3%81%8C%E3%83%A1%E3%83%A2%E5%B8%B3%E3%81%AB%E3%81%AA%E3%82%8B%E3%82%B5%E3%82%A4%E3%83%88%E3%81%8C%E8%B6%85%E4%BE%BF%E5%88%A9%EF%BC%81%EF%BD%9Cmymemo.top" target="_blank">
+	    <li class="tooltipped z-depth-1 icon ion-social-facebook" data-position="left" data-delay="50" data-tooltip="Facebook" style="background:#3b5998;" data-tooltip-id="ccf06e16-84d5-947c-1bf0-731986fcb730"></li>
+	  </a>
+  	</ul>
+  </div>
+
+  <div id="barFlup" onmouseover="barShow();">
+  </div>
+
+<script type="text/javascript">
+	window.onload = function(){
+		var localMemo = localStorage.getItem('memo');
+		var localTime = localStorage.getItem('timer');
+		document.getElementById("main").value = localMemo;
+		document.getElementById("main").focus();
+		if(!localMemo == ""){
+			Materialize.toast('前回のメモを表示します。' + localTime, 5000, 'rounded')
+		} else {
+			console.log("null");
+		}
+	}
+
+	$(document).ready(function(){
+      $('.tooltipped').tooltip({delay: 50});
+      count = 0;
+      numbers = 0;
+    });
+
+    function saved(){
+    	console.log(document.getElementById("main").value);
+    	var memos = document.getElementById("main").value;
+    	var times = new Date();
+    	localStorage.setItem('memo', memos);
+    	localStorage.setItem('timer', times.toLocaleString());
+    	Materialize.toast('保存しました。', 2000, 'rounded')
+    }
+
+    function share(){
+    	alert("現在この機能はサポートされておりません。申し訳ございません。")
+    	//var values = document.getElementById("main").value;
+    	//location.href = "mailto:?subject=メモ帳からの共有｜mymemo.top&amp;body=" + values;
+    }
+
+    function deletes(){
+    	if(window.confirm('本当に削除しますか？')){
+			localStorage.clear();
+	    	document.getElementById("main").value = "";
+	    	Materialize.toast('削除しました。', 2000, 'rounded')
+	    }
+    }
+
+    function small(){
+    	$("#main").addClass("more-small");
+    	Materialize.toast('メモのサイズを小さくしました', 1000, 'rounded')
+    }
+
+    function changeFont(){
+    	if(count == 0){
+    		$(document.getElementById("main")).css("font-size", "26px");
+    		count = 1;
+    		Materialize.toast('文字サイズ　大', 1000, 'rounded')
+    	} else if (count == 1){
+    		$(document.getElementById("main")).css("font-size", "30px");
+    		Materialize.toast('文字サイズ　特大', 1000, 'rounded')
+    		count = 2;
+    	} else if (count == 2){
+    		$(document.getElementById("main")).css("font-size", "16px");
+    		Materialize.toast('文字サイズ　小', 1000, 'rounded')
+    		count = 3;
+    	} else if (count == 3){
+    		$(document.getElementById("main")).css("font-size", "20px");
+    		Materialize.toast('文字サイズ　中', 1000, 'rounded')
+    		count = 0;
+    	}
+    }
+
+    function weights(){
+    	if(numbers == 0){
+    		$(document.getElementById("main")).css("font-weight", "300");
+    		numbers = 1;
+    		Materialize.toast('文字線　中', 1000, 'rounded')
+    	} else if (numbers == 1){
+    		$(document.getElementById("main")).css("font-weight", "500");
+    		Materialize.toast('文字サイズ　太', 1000, 'rounded')
+    		numbers = 2;
+    	} else if (numbers == 2){
+    		$(document.getElementById("main")).css("font-weight", "900");
+    		Materialize.toast('文字サイズ　極太', 1000, 'rounded')
+    		numbers = 3;
+    	} else if (numbers == 3){
+    		$(document.getElementById("main")).css("font-weight", "100");
+    		Materialize.toast('文字サイズ　極細', 1000, 'rounded')
+    		numbers = 0;
+    	}
+    }
+
+    function barShow(){
+    	$(document.getElementById("bar")).addClass("active");
+    }
+    
+    function barHide(){
+    	$(document.getElementById("bar")).removeClass("active");
+    }
+
+	
+</script>
+
+<div class="material-tooltip" id="4860e20d-5f99-b78b-f07d-57a4e9cd3a67"><span>SAVE</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="5994e15b-e269-32b8-8818-05cb36621ae4"><span>SHARE</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="732f9e9e-46df-6b95-82ac-c3cf0c03737c"><span>DELETE</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="fb7428d9-a2cb-8277-ca86-c98052cb5651"><span>Small</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="6c771a95-7f7a-6995-68c3-4c64627256d9"><span>Font Size</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="473b370b-5a0b-2279-3b36-9a41ed426dc8"><span>Font Weight</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="06655d05-7317-7b7c-4c1d-a8f548e760ea"><span>Twitter</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="b7e434e2-b095-1825-a7c1-d4abc2ae4697"><span>Facebook</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="hiddendiv common"></div><div class="material-tooltip" id="5a8d7b95-8b98-91bf-6a50-3195701baa85"><span>SAVE</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="9c4ffc65-ac53-1601-8367-6d56ea3a45ea"><span>SHARE</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="910eae27-4714-d8a4-7576-a0f264e30f37"><span>DELETE</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="acf5a641-eed0-6b86-3f20-22ebabf72c9a"><span>Small</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="b13c4c06-db09-0677-78e3-344e74410ba1"><span>Font Size</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="9c84478e-7eb7-6f00-f8f8-15f6ca50d827"><span>Font Weight</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="84cb7966-9718-bc35-ebf6-0b57af991f69"><span>Twitter</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div><div class="material-tooltip" id="ccf06e16-84d5-947c-1bf0-731986fcb730"><span>Facebook</span><div class="backdrop" style="top: 0px; left: 0px;"></div></div></body></html>
